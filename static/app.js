@@ -28,7 +28,7 @@ btn.addEventListener("click",async(e)=>{
     });
 }
 
-    if(a>24 || a<0){
+    if(a>24 || a<0 || a==""){
         con.style.backgroundImage="";
         con.style.innerHTML="";
         con.style.height="";
@@ -44,7 +44,7 @@ btn.addEventListener("click",async(e)=>{
         document.querySelector(".input1").classList.add("error");
         return;
     }
-    else if(b>100 || b<0){
+    else if(b>100 || b<0 || b==""){
         con.style.backgroundImage="";
         con.style.innerHTML="";
         con.style.height="";
@@ -60,7 +60,7 @@ btn.addEventListener("click",async(e)=>{
         document.querySelector(".input2").classList.add("error");
         return;
     }
-    else if(c>100 || c<0){
+    else if(c>100 || c<0 || c==""){
         con.style.backgroundImage="";
         con.style.innerHTML="";
         con.style.height="";
@@ -76,7 +76,7 @@ btn.addEventListener("click",async(e)=>{
         document.querySelector(".input3").classList.add("error");
         return;
     }
-    else if(d>100 || d<0){
+    else if(d>100 || d<0 || d==""){
         con.style.backgroundImage="";
         con.style.innerHTML="";
         con.style.height="";
@@ -92,7 +92,7 @@ btn.addEventListener("click",async(e)=>{
         document.querySelector(".input4").classList.add("error");
         return;
     }
-    else if(f<0 || f>=alpha){
+    else if(f<0 || f>=alpha || f==""){
         con.style.backgroundImage="";
         con.style.innerHTML="";
         con.style.height="";
@@ -145,7 +145,7 @@ btn.addEventListener("click",async(e)=>{
             head.innerText="Confusion matric of model used in prediction";
             head.style.width="100%";
             head.style.width="red";
-            con.style.backgroundImage="url('/static/output.png')";
+            con.style.backgroundImage="url('/static/outputCorrected.png')";
             con.style.backgroundRepeat="no-repeat";
             con.style.height="70rem";
             con.style.minWidth="50rem";
