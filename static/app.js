@@ -48,10 +48,6 @@ btn.addEventListener("click",async(e)=>{
         document.querySelector(".input5").classList.add("error");
         return;
     }
-    else{
-        alert("error")
-        return;
-    }
     
     const response= await fetch("/predict",{
         method:"POST",
