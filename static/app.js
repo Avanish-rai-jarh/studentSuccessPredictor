@@ -63,16 +63,16 @@ btn.addEventListener("click",async(e)=>{
 
     let fail_pass=recieved.prediction;
     otp.innerHTML="";
-    otp.style.backgroundColor="none";
-    con.style.backgroundImage="none";
-    con.style.innerHTML="none";
-    con.style.height="none";
-    con.style.minWidth="none";
-    con.style.marginLeft="none";
-    con.innerHTML="none";
-    head.innerText="none";
-    head.style.width="none";
-    head.style.color="none";
+    otp.style.backgroundColor="";
+    con.style.backgroundImage="";
+    con.style.innerHTML="";
+    con.style.height="";
+    con.style.minWidth="";
+    con.style.marginLeft="";
+    con.innerHTML="";
+    head.innerText="";
+    head.style.width="";
+    head.style.color="";
 
     try{
         if(fail_pass==1){
