@@ -3,8 +3,12 @@ let otp=document.querySelector(".output");
 let con=document.querySelector(".confusion");
 let head=document.querySelector(".matric");
 let select=document.querySelector(".input");
+let aud=document.querySelector(".audio");
+
+let popSound=new Audio("/static/alert.mp3")
 
 btn.addEventListener("click",async(e)=>{
+
     let a=document.querySelector(".input1").value;
 
     let b=document.querySelector(".input2").value;
@@ -15,6 +19,7 @@ btn.addEventListener("click",async(e)=>{
 
     let f=document.querySelector(".input5").value;
 
+
     let alpha=24-a;
 
     for(let i=0;i<select.length;i+=1){
@@ -24,30 +29,88 @@ btn.addEventListener("click",async(e)=>{
 }
 
     if(a>24 || a<0){
+        con.style.backgroundImage="";
+        con.style.innerHTML="";
+        con.style.height="";
+        con.style.minWidth="";
+        con.style.marginLeft="";
+        con.innerHTML="";
+        head.innerText="";
+        head.style.width="";
+        head.style.color="";
         alert("Invalid value of study hours");
+        popSound.currentTime=0;
+        popSound.play();
         document.querySelector(".input1").classList.add("error");
         return;
     }
     else if(b>100 || b<0){
+        con.style.backgroundImage="";
+        con.style.innerHTML="";
+        con.style.height="";
+        con.style.minWidth="";
+        con.style.marginLeft="";
+        con.innerHTML="";
+        head.innerText="";
+        head.style.width="";
+        head.style.color="";
         alert("Invalid value of attendance rate");
+        popSound.currentTime=0;
+        popSound.play();
         document.querySelector(".input2").classList.add("error");
         return;
     }
     else if(c>100 || c<0){
+        con.style.backgroundImage="";
+        con.style.innerHTML="";
+        con.style.height="";
+        con.style.minWidth="";
+        con.style.marginLeft="";
+        con.innerHTML="";
+        head.innerText="";
+        head.style.width="";
+        head.style.color="";
         alert("Invalid value of assignment rate");
+        popSound.currentTime=0;
+        popSound.play();
         document.querySelector(".input3").classList.add("error");
         return;
     }
     else if(d>100 || d<0){
+        con.style.backgroundImage="";
+        con.style.innerHTML="";
+        con.style.height="";
+        con.style.minWidth="";
+        con.style.marginLeft="";
+        con.innerHTML="";
+        head.innerText="";
+        head.style.width="";
+        head.style.color="";
         alert("Invalid value of marks");
+        popSound.currentTime=0;
+        popSound.play();
         document.querySelector(".input4").classList.add("error");
         return;
     }
     else if(f<0 || f>=alpha){
+        con.style.backgroundImage="";
+        con.style.innerHTML="";
+        con.style.height="";
+        con.style.minWidth="";
+        con.style.marginLeft="";
+        con.innerHTML="";
+        head.innerText="";
+        head.style.width="";
+        head.style.color="";
         alert("Invalid value of sleep hours");
+        popSound.currentTime=0;
+        popSound.play();
         document.querySelector(".input5").classList.add("error");
         return;
     }
+
+    aud.currentTime=0;
+    aud.play();
     
     const response= await fetch("/predict",{
         method:"POST",
