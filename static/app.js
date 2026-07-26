@@ -2,6 +2,7 @@ let btn=document.querySelector(".btn-primary");
 let otp=document.querySelector(".output");
 let con=document.querySelector(".confusion");
 let head=document.querySelector(".matric");
+let select=document.querySelector(".input");
 
 btn.addEventListener("click",async(e)=>{
     let a=document.querySelector(".input1").value;
@@ -13,6 +14,43 @@ btn.addEventListener("click",async(e)=>{
     let d=document.querySelector(".input4").value;
 
     let f=document.querySelector(".input5").value;
+
+    let alpha=24-a;
+
+    for(let i=0;i<select.length;i+=1){
+    select[i].addEventListener("input",(e)=>{
+        select.classList.remove("error");
+    });
+}
+
+    if(a>24 || a<0){
+        alert("Invalid value of study hours");
+        document.querySelector(".input1").classList.add("error");
+        return;
+    }
+    else if(b>100 || b<0){
+        alert("Invalid value of attendance rate");
+        document.querySelector(".input2").classList.add("error");
+        return;
+    }
+    else if(c>100 || c<0){
+        alert("Invalid value of assignment rate");
+        document.querySelector(".input3").classList.add("error");
+        return;
+    }
+    else if(d>100 || d<0){
+        alert("Invalid value of marks");
+        document.querySelector(".input4").classList.add("error");
+        return;
+    }
+    else if(f<0 || f>=alpha){
+        alert("Invalid value of sleep hours");
+        document.querySelector(".input5").classList.add("error");
+        return;
+    }
+    else{
+        alert("error")
+    }
     
     const response= await fetch("/predict",{
         method:"POST",

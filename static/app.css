@@ -91,3 +91,13 @@ body{
     color:red;
     margin: 20px;
 }
+
+.input:focus{
+    border:2px solid green;
+    outline:none;
+}
+
+.error{
+    border:2px solid red;
+    outline:none;
+}
