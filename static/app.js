@@ -50,6 +50,7 @@ btn.addEventListener("click",async(e)=>{
     }
     else{
         alert("error")
+        return;
     }
     
     const response= await fetch("/predict",{
